@@ -23,5 +23,11 @@
 	<!-- ********************************************* -->
 	
 	<context:property-placeholder location="classpath:config.properties"/>
+	
+	<!-- ********************************************* -->
+	<!-- Outros módulos -->
+	<!-- ********************************************* -->
+	 
+	 <import resource="applicationContext-jms.xml" />
 	 
 </beans>

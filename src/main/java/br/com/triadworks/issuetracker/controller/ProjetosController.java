@@ -1,5 +1,6 @@
 package br.com.triadworks.issuetracker.controller;
 
+import org.apache.camel.ProducerTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,12 +13,14 @@ import br.com.triadworks.issuetracker.model.Projeto;
 @Resource
 public class ProjetosController {
 	
-	private Logger logger = LoggerFactory.getLogger(ProjetosController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProjetosController.class);
 	
 	private final Result result;
+	private final ProducerTemplate producer;
 	
-	private ProjetosController(Result result) {
+	private ProjetosController(Result result, ProducerTemplate producer) {
 		this.result = result;
+		this.producer = producer;
 	}
 
 	@Get("/projetos")
@@ -26,7 +29,12 @@ public class ProjetosController {
 	
 	@Post("/projetos")
 	public void novo(Projeto projeto) {
+		
+		projeto.setId(projeto.getDescricao().hashCode());
 		logger.info("Gravando projeto {}", projeto);
+		
+		producer.sendBody("jms:queue:projetos", projeto);
+		
 		result.include("notice", "Projeto gravado com sucesso!")
 			.redirectTo(this).form();
 	}
