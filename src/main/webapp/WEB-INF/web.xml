@@ -20,22 +20,6 @@
 	</filter-mapping>
 	
 	<!-- ******************************************************* -->
-	<!-- Configuracao do Open Session in View -->
-	<!-- ******************************************************* -->
-	
-	<!-- Spring (Jpa Support) - OpenEntityManagerInViewFilter -->
-	<filter>
-		<filter-name>oemiv</filter-name>
-		<filter-class>
-			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
-		</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>oemiv</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-	<!-- ******************************************************* -->
 	<!-- Configuracao do VRaptor -->
 	<!-- ******************************************************* -->
 	

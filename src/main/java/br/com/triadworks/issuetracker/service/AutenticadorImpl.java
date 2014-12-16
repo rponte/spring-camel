@@ -1,20 +1,24 @@
 package br.com.triadworks.issuetracker.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.triadworks.issuetracker.dao.UsuarioDao;
 import br.com.triadworks.issuetracker.model.Usuario;
 
-@Service("autenticador")
+@Service
 public class AutenticadorImpl implements Autenticador {
+
+	private final UsuarioDao dao;
+	
+	@Autowired
+	private AutenticadorImpl(UsuarioDao dao) {
+		this.dao = dao;
+	}
 
 	@Override
 	public Usuario autentica(String login, String senha) {
-		if (login.equals(senha)) {
-			Usuario usuario = new Usuario();
-			usuario.setLogin(login);
-			return usuario;
-		}
-		return null;
+		return dao.buscaPor(login, senha);
 	}
 
 }
