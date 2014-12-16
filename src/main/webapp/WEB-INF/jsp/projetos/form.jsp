@@ -26,7 +26,7 @@
 				<label class="control-label">Nome</label>
 				<div class="controls">
 					<input type="text" class="span7"
-						name="projeto.nome">
+						name="projeto.descricao">
 				</div>
 			</div>
 			<div class="form-actions">

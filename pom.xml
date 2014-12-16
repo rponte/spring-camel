@@ -9,6 +9,9 @@
 	<name>Spring Camel Example</name>
 
 	<properties>
+		<activemq-version>5.9.1</activemq-version>
+		<camel-version>2.14.0</camel-version>
+		<slf4j-version>1.7.5</slf4j-version>
 		<org.springframework.version>3.2.11.RELEASE</org.springframework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<props.compile.jdk.source>1.7</props.compile.jdk.source>
@@ -138,7 +141,7 @@
 			<artifactId>spring-jms</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
@@ -164,25 +167,42 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-
+		
 		<!-- ************************ -->
-		<!-- Hibernate/JPA -->
+		<!-- Apache Camel -->
 		<!-- ************************ -->
+		
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.12.Final</version>
-		</dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
 		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.1-901.jdbc4</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5-pre3</version>
-		</dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-aws</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jsonpath</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <version>${activemq-version}</version>
+        </dependency>
 
 		<!-- ************************ -->
 		<!-- PRODUCTION DEPENDENCIES -->
@@ -195,56 +215,22 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
+			<version>${slf4j-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
-			<version>1.7.5</version>
+			<version>${slf4j-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
-			<version>1.7.5</version>
+			<version>${slf4j-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>1.7.5</version>
-		</dependency>
-
-		<!-- ************************ -->
-		<!-- TEST DEPENDENCIES -->
-		<!-- ************************ -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.9.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<version>2.4.9</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${org.springframework.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>br.com.triadworks</groupId>
-		    <artifactId>dbunitmanager</artifactId>
-		    <version>1.0-SNAPSHOT</version>
-		    <scope>test</scope>
+			<version>${slf4j-version}</version>
 		</dependency>
 
 	</dependencies>
