@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.triadworks.myproject</groupId>
-	<artifactId>vraptor-blank-project</artifactId>
+	<groupId>br.com.triadworks.spring-camel</groupId>
+	<artifactId>spring-camel</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>VRaptor Blank Project</name>
+	<name>Spring Camel Example</name>
 
 	<properties>
-		<org.springframework.version>3.1.4.RELEASE</org.springframework.version>
+		<org.springframework.version>3.2.11.RELEASE</org.springframework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<props.compile.jdk.source>1.7</props.compile.jdk.source>
 		<props.compile.jdk.target>1.7</props.compile.jdk.target>
@@ -130,12 +130,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-asm</artifactId>
+			<artifactId>spring-web</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
+			<artifactId>spring-jms</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
 
@@ -145,9 +145,9 @@
 			<version>2.2.2</version>
 		</dependency>
 		<dependency>
-			<groupId>javassist</groupId>
+			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
-			<version>3.12.1.GA</version>
+			<version>3.18.1-GA</version>
 		</dependency>
 		<dependency>
 			<groupId>aopalliance</groupId>
@@ -157,7 +157,7 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.7.0</version>
+			<version>1.7.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -171,7 +171,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.10.Final</version>
+			<version>4.2.12.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -184,35 +184,6 @@
 			<version>0.9.5-pre3</version>
 		</dependency>
 
-		<!-- ************************ -->
-		<!-- JASPERREPORTS DEPENDENCIES -->
-		<!-- ************************ -->
-		<dependency>
-		    <groupId>br.com.prixma</groupId>
-		    <artifactId>vraptor-jasperreport</artifactId>
-		    <version>1.0.1</version>
-		    <exclusions>
-		    		<exclusion>
-					<groupId>br.com.caelum</groupId>
-					<artifactId>vraptor</artifactId>
-				</exclusion>
-		    		<exclusion>
-					<groupId>net.sf.jasperreports</groupId>
-					<artifactId>jasperreports</artifactId>
-				</exclusion>
-		    </exclusions>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>5.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-fonts</artifactId>
-			<version>4.0.0</version>
-		</dependency>
-		
 		<!-- ************************ -->
 		<!-- PRODUCTION DEPENDENCIES -->
 		<!-- ************************ -->
@@ -279,7 +250,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>issuetracker</finalName>
+		<finalName>spring-camel</finalName>
 		<plugins>
 			<!-- Set to compile using JDK 7 -->
 		    <plugin>

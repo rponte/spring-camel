@@ -37,7 +37,7 @@ public class LoginController {
 		}
 		
 		usuarioWeb.loga(usuario);
-		result.redirectTo(DashboardController.class).dashboard();
+		result.redirectTo(IndexController.class).index();
 	}
 	
 	@Get("/logout")
