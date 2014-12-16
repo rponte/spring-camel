@@ -203,6 +203,12 @@
             <artifactId>activemq-camel</artifactId>
             <version>${activemq-version}</version>
         </dependency>
+        
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-gson</artifactId>
+			<version>${camel-version}</version>
+		</dependency>
 
 		<!-- ************************ -->
 		<!-- PRODUCTION DEPENDENCIES -->
