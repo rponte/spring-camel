@@ -23,6 +23,7 @@ public class ProjetosRouter extends RouteBuilder {
 		DataFormat json = new GsonDataFormat(Projeto.class);
 		
 		from("activemq:queue:projetos")
+			.id("activemq-route")
 			.log("Recebendo mensagem da fila 'projetos': ${in.body}")
 			.choice()
 				.when(body().isInstanceOf(String.class))

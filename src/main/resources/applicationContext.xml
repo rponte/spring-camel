@@ -22,7 +22,7 @@
 	<!-- Configuração -->
 	<!-- ********************************************* -->
 	
-	<context:property-placeholder location="classpath:config.properties"/>
+	<context:property-placeholder location="classpath:config.properties, classpath:aws.properties" />
 	
 	<!-- ********************************************* -->
 	<!-- Outros módulos -->

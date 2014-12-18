@@ -33,6 +33,7 @@ public class AwsSQSRouter extends RouteBuilder {
 		 * Consome fila do SQS
 		 */
 		from(sqs)
+			.id("aws.sqs-route")
 			.bean(this.processor, "processaTexto");
 		
 	}
