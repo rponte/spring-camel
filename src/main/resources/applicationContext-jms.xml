@@ -27,10 +27,10 @@
 	
 	<camel:camelContext trace="true">
 		<camel:contextScan />
-		<camel:template id="producer" />
+		<camel:template id="camelTemplate" />
 	</camel:camelContext>
 	
-	<bean id="jms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+	<bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
 		<property name="brokerURL" value="${jms.url}" />
 		<property name="transacted" value="true"/>
 		<property name="cacheLevelName" value="CACHE_CONSUMER" />

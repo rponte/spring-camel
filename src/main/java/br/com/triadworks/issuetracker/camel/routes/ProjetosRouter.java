@@ -20,10 +20,10 @@ public class ProjetosRouter extends RouteBuilder {
 		
 		DataFormat json = new GsonDataFormat(Projeto.class);
 		
-		from("jms:queue:projetos")
-			.log("Recebendo mensagem da fila #projetos...")
-			.unmarshal(json)
-			.bean(this.processor, "processaProjeto");
+		from("activemq:queue:projetos")
+			.log("Recebendo mensagem da fila #projetos: ${body}")
+//			.unmarshal(json)
+			.bean(this.processor, "processaMapaDeProjeto");
 		
 	}
 

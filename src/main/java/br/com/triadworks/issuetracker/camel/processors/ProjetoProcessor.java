@@ -1,5 +1,7 @@
 package br.com.triadworks.issuetracker.camel.processors;
 
+import java.util.Map;
+
 import org.apache.camel.Exchange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,10 @@ public class ProjetoProcessor {
 	
 	public void processaProjeto(Projeto projeto) {
 		logger.info("Processando projeto da fila {}", projeto);
+	}
+	
+	public void processaMapaDeProjeto(Map<String, Object> map) {
+		logger.info("Processando projeto da fila {}", map);
 	}
 	
 }
