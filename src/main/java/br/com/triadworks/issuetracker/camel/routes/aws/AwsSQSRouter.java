@@ -20,7 +20,7 @@ public class AwsSQSRouter extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
-		String sqs = "aws-sqs://vf_queue?amazonSQSClient=#awsSqsClient&defaultVisibilityTimeout=2";
+		String sqs = "aws-sqs://projetos?amazonSQSClient=#awsSqsClient&defaultVisibilityTimeout=2";
 		
 		/**
 		 * Produz uma mensagem a cada 10s
