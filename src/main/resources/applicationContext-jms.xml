@@ -21,15 +21,6 @@
 	<!-- creates an activemq connection factory using the amq namespace -->
 	<amq:connectionFactory id="connectionFactory" brokerURL="${jms.url}"  />
 	
-	<!-- ********************************************* -->
-	<!-- CONFIGURAÇÃO DO APACHE CAMEL                  -->
-	<!-- ********************************************* -->
-	
-	<camel:camelContext trace="true">
-		<camel:contextScan />
-		<camel:template id="camelTemplate" />
-	</camel:camelContext>
-	
 	<bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
 		<property name="brokerURL" value="${jms.url}" />
 		<property name="transacted" value="true"/>
