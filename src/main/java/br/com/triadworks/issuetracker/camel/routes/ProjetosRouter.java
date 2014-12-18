@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import br.com.triadworks.issuetracker.camel.processors.ProjetoProcessor;
 import br.com.triadworks.issuetracker.model.Projeto;
 
-@Component
+//@Component
 public class ProjetosRouter extends RouteBuilder {
 
 	@Autowired
