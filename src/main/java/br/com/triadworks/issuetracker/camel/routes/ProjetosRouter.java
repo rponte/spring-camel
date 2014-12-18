@@ -1,5 +1,7 @@
 package br.com.triadworks.issuetracker.camel.routes;
 
+import java.util.Map;
+
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.gson.GsonDataFormat;
 import org.apache.camel.spi.DataFormat;
@@ -21,9 +23,15 @@ public class ProjetosRouter extends RouteBuilder {
 		DataFormat json = new GsonDataFormat(Projeto.class);
 		
 		from("activemq:queue:projetos")
-			.log("Recebendo mensagem da fila #projetos: ${body}")
-//			.unmarshal(json)
-			.bean(this.processor, "processaMapaDeProjeto");
+			.log("Recebendo mensagem da fila 'projetos': ${in.body}")
+			.choice()
+				.when(body().isInstanceOf(String.class))
+					.unmarshal(json)
+					.bean(this.processor, "processaPojo")
+				.when(body().isInstanceOf(Map.class))
+					.bean(this.processor, "processaMap")
+				.otherwise()
+					.bean(this.processor, "processaTexto");
 		
 	}
 

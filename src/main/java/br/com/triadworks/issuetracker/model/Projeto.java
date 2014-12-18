@@ -11,6 +11,13 @@ public class Projeto implements Serializable {
 	private Integer id;
 	private String descricao;
 	
+	public Projeto() {}
+	
+	public Projeto(Integer id, String descricao) {
+		this.id = id;
+		this.descricao = descricao;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -26,7 +33,7 @@ public class Projeto implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("{id=%d,nome=%s}", id, descricao);
+		return String.format("Projeto={id=%d,nome=%s}", id, descricao);
 	}
 	
 	public String toJson() {

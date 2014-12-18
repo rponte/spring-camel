@@ -19,12 +19,16 @@ public class ProjetoProcessor {
 		logger.info("Processando projeto da fila {}", projeto);
 	}
 	
-	public void processaProjeto(Projeto projeto) {
-		logger.info("Processando projeto da fila {}", projeto);
+	public void processaTexto(String texto) {
+		logger.info("Processando TEXTO da fila {}", texto);
 	}
 	
-	public void processaMapaDeProjeto(Map<String, Object> map) {
-		logger.info("Processando projeto da fila {}", map);
+	public void processaPojo(Projeto projeto) {
+		logger.info("Processando POJO da fila {}", projeto);
+	}
+	
+	public void processaMap(Map<String, Object> map) {
+		logger.info("Processando MAP da fila {}", map);
 	}
 	
 }
