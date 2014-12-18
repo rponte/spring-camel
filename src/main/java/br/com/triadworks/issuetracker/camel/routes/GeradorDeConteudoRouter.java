@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.triadworks.issuetracker.model.Projeto;
 
-//@Component
+@Component
 public class GeradorDeConteudoRouter extends RouteBuilder {
 	
 	private final Random randomGenerator = new Random();
