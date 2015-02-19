@@ -38,6 +38,9 @@ public class AwsSQSRouter extends RouteBuilder {
 		
 		/**
 		 * Consome fila do SQS
+		 * http://camel.apache.org/aws-sqs.html
+		 * http://camel.apache.org/polling-consumer.html
+		 * http://camel.apache.org/tracer.html
 		 */
 		
 		sqs +=	"&defaultVisibilityTimeout=2" + // esconde msg na fila por 2s
